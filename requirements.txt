@@ -1,0 +1,2 @@
+click==6.7
+watson-developer-cloud==0.25.1

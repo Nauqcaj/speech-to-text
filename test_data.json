@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "confidence": 0.803,
+          "transcript": "this is the first line of test data"
+        }
+      ],
+      "final": true
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.981,
+          "transcript": "short line"
+        }
+      ],
+      "final": true
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.839,
+          "transcript": "this is the last line of test data"
+        }
+      ],
+      "final": true
+    }
+  ],
+  "result_index": 0
+}
