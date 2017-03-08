@@ -32,7 +32,6 @@ class SimpleJsonFormatter(BaseJsonFormatter):
 
 class HTMLFormatter(BaseFormatter):
     def format(self, data):
-
         results = (obj['transcript']
                    for obj in self._parse(data))
         lines = ("{spaces}<p>{line}</p>\n".format(
@@ -40,14 +39,17 @@ class HTMLFormatter(BaseFormatter):
         return "<html>\n{}</html>".format(''.join(lines))
 
 
-FORMATTERS = (
-    ('html', HTMLFormatter),
-    ('simple', SimpleJsonFormatter),
-    ('original', OriginalJsonFormatter),
-)
+class MarkdownFormatter(BaseFormatter):
+    def format(self, data):
+        results = (obj['transcript']
+                   for obj in self._parse(data))
+        lines = ("{line}\n\n".format(line=line) for line in results)
+
+        return ''.join(lines).rstrip()
 
 FORMATTERS = {
     'html': HTMLFormatter,
+    'markdown': MarkdownFormatter,
     'simple': SimpleJsonFormatter,
     'original': OriginalJsonFormatter
 }

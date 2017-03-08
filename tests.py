@@ -5,7 +5,8 @@ import json
 import unittest
 from click.testing import CliRunner
 
-from speech_to_text.formatters import HTMLFormatter, SimpleJsonFormatter
+from speech_to_text.formatters import (
+    HTMLFormatter, SimpleJsonFormatter, MarkdownFormatter)
 from speech_to_text.utils import guess_mime_type
 from speech_to_text.command import speech_to_text
 
@@ -42,6 +43,14 @@ MOCKED_AUDIO_RESULT = {
     ],
     "result_index": 0
 }
+
+MARKDOWN_EXPECTED_RESULT = """
+this is the first line of test data
+
+short line
+
+this is the last line of test data
+""".strip()
 
 HTML_EXPECTED_RESULT = """
 <html>
@@ -93,6 +102,10 @@ class FormattersTestCase(unittest.TestCase):
     def test_html_formatter_with_test_data(self):
         result = HTMLFormatter().format(self.data)
         self.assertEqual(result, HTML_EXPECTED_RESULT)
+
+    def test_html_formatter_with_test_data(self):
+        result = MarkdownFormatter().format(self.data)
+        self.assertEqual(result, MARKDOWN_EXPECTED_RESULT)
 
     def test_json_formatter_with_default_indent(self):
         result = SimpleJsonFormatter().format(self.data)
