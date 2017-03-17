@@ -27,19 +27,9 @@ version = VALUES['__version__']
 project_name = os.path.basename(os.path.dirname(os.path.realpath(__file__)))
 package_name = 'speech_to_text'
 
-
-def extract_requirements_from_file(req_file_name):
-    with open(req_file_name, 'r') as fp:
-        return [line.strip() for line in fp
-                if line.strip() and not line.startswith('-r')]
-
-requirements = extract_requirements_from_file('requirements.txt')
-dev_requirements = (requirements +
-                    extract_requirements_from_file('dev-requirements.txt'))
-
 project_url = 'http://github.com/rmotr/{project_name}'.format(
     project_name=project_name)
-# assert False, requirements
+
 
 class PyTest(TestCommand):
     user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
@@ -73,8 +63,18 @@ setup(
     scripts=['main.py'],
     packages=[package_name],
     maintainer='Santiago Basulto',
-    install_requires=requirements,
-    tests_require=dev_requirements,
+    install_requires=[
+        "progressbar",
+        "click==6.7",
+        "watson-developer-cloud==0.25.1"
+    ],
+    dependency_links=[
+        "https://github.com/niltonvolpato/python-progressbar/tarball/master#egg=progressbar"
+    ],
+    tests_require=[
+        "mock==2.0.0",
+        "pytest==3.0.6"
+    ],
     entry_points={
         'console_scripts': [
             'speech_to_text = main:speech_to_text'

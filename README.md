@@ -4,6 +4,14 @@ Simple command line tool to create text transcripts out of audio files using [IB
 
 ## Install
 
+Using PyPi is the easiest way:
+
+```bash
+$ pip install speech-to-text
+```
+
+Or installing the dev version:
+
 ```bash
 $ git clone https://github.com/rmotr/speech-to-text
 $ mkvirtualenv speech-to-text
