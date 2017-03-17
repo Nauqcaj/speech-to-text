@@ -109,11 +109,19 @@ class FormattersTestCase(unittest.TestCase):
 
     def test_json_formatter_with_default_indent(self):
         result = SimpleJsonFormatter().format(self.data)
-        self.assertEqual(result, JSON_EXPECTED_RESULT_INDENT_2)
+
+        result_parsed = json.loads(result)
+        expected_prased = json.loads(JSON_EXPECTED_RESULT_INDENT_2)
+
+        self.assertEqual(result_parsed, expected_prased)
 
     def test_json_formatter_with_custom_indent(self):
         result = SimpleJsonFormatter(indent=4).format(self.data)
-        self.assertEqual(result, JSON_EXPECTED_RESULT_INDENT_4)
+
+        result_parsed = json.loads(result)
+        expected_prased = json.loads(JSON_EXPECTED_RESULT_INDENT_4)
+
+        self.assertEqual(result_parsed, expected_prased)
 
 
 class GuessMimeTypeTestCase(unittest.TestCase):

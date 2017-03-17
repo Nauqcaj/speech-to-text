@@ -2,6 +2,7 @@ import os
 from watson_developer_cloud import SpeechToTextV1
 
 from .utils import guess_mime_type
+from .formatters import get_formatter
 
 __version__ = '0.0.1'
 __title__ = 'speech_to_text'
