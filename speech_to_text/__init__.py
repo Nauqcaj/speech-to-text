@@ -1,6 +1,7 @@
 from watson_developer_cloud import SpeechToTextV1
 
 from .utils import guess_mime_type
+from .formatters import get_formatter
 
 __version__ = '0.0.1'
 __title__ = 'speech_to_text'
@@ -9,8 +10,7 @@ __description__ = "Speech to Text command using IBM Watson API"
 
 
 def recognize_speech(username, password, audio_file_path,
-                     forced_mime_type, audio_model):
-    raise ValueError("Hello")
+                     forced_mime_type, audio_model=None):
     stt = SpeechToTextV1(username=username, password=password)
     content_type = guess_mime_type(audio_file_path, forced_mime_type)
     kwargs = {
