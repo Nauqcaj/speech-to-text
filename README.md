@@ -23,7 +23,7 @@ $ pip install -r requirements.txt
 The first thing you'll need to do is **get your Bluemix Username and Password**. This is a tedious process and we're writing a blog post that will describe it. Once you have your username and password you can do:
 
 ```bash
-python main.py -u <MY-USERNAME> -p <MY-PASSWORD> -f html -i <AUDIO-FILE> transcript.html
+$ speech_to_text -u <MY-USERNAME> -p <MY-PASSWORD> -f html -i <AUDIO-FILE> transcript.html
 ```
 
 _(You can omit the password option and you'll be prompted to type it in a secure manner.)_
