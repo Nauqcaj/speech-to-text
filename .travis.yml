@@ -1,0 +1,16 @@
+language: python
+sudo: false
+os:
+  - linux
+
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+
+install:
+  - pip install -r dev-requirements.txt
+
+script:
+  - "py.test tests.py"
