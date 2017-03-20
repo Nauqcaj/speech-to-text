@@ -20,7 +20,7 @@ $ pip install -r requirements.txt
 
 ## Usage
 
-The first thing you'll need to do is **get your Bluemix Username and Password**. This is a tedious process and we're writing a blog post that will describe it. Once you have your username and password you can do:
+The first thing you'll need to do is **get your Bluemix Username and Password**. This is a tedious process, if you have issues, we've written [a blog post that describes how to do it](https://blog.rmotr.com/how-we-use-ibm-watson-speech-to-text-to-transcribe-our-classes-9f59cafdb4b0#.af7b1d909). Once you have your username and password you can do:
 
 ```bash
 $ speech_to_text -u <MY-USERNAME> -p <MY-PASSWORD> -f html -i <AUDIO-FILE> transcript.html
