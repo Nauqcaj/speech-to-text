@@ -38,11 +38,13 @@ There are currently 4 formatters builtin: `html` (default), `markdown`, `json`, 
 
 Under the `examples/` directory you can find a short audio file containing the first 30 seconds of [Jacob Kaplan-Moss Keynote from Pycon 2015](https://www.youtube.com/watch?v=hIJdFxYlEKE). There are also the end results of the transcription (_html_ and _markdown_ format).
 
-#### Documentation
+#### Watson Documentation
 
 https://www.ibm.com/watson/developercloud/speech-to-text/api/v1/#recognize_sessionless_nonmp12
 
-File types supported:
+#### Reference
+
+**Audio File types supported:**
 
 * audio/flac
 * audio/l16
